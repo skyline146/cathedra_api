@@ -18,9 +18,9 @@ export class AuthService {
       const { email, password } = req.body
 
       //check is user already exists
-      const candidate = await UserRepository.findOneBy({ email })
+      const checkUserEmail = await UserRepository.findOneBy({ email })
 
-      if (candidate) {
+      if (checkUserEmail) {
         throw new Error('user already exists')
       }
       console.log('1123131')

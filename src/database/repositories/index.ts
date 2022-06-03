@@ -1,8 +1,13 @@
-
-import { TokenRepository } from "./Token.repository";
-import { UserRepository } from "./User.repository";
+import { AuditoriaRepository } from "./Auditoria";
+import { TokenRepository } from "./Token";
+import { UserRepository } from "./User";
+import { CathedraRepository } from "./Catherda";
+import { CarrierRepository } from "./Carrier";
 
 export {
   UserRepository,
-  TokenRepository
+  TokenRepository,
+  AuditoriaRepository,
+  CathedraRepository,
+  CarrierRepository
 }

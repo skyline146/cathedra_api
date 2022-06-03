@@ -3,9 +3,9 @@ import { Router } from "express"
 import { AuditoriaEntity } from '../database/entities/Auditoria'
 import { CarrierEntity } from '../database/entities/Carrier'
 import { CathedraEntity } from '../database/entities/Cathedra'
-import { AuditoriaRepository } from '../database/repositories/Auditoria.repository'
-import { CarrierRepository } from '../database/repositories/Carrier.repository'
-import { CathedraRepository } from '../database/repositories/Catherda.repository'
+import { AuditoriaRepository } from '../database/repositories/Auditoria'
+import { CarrierRepository } from '../database/repositories/Carrier'
+import { CathedraRepository } from '../database/repositories/Catherda'
 import { authService } from "../service"
 
 export const init = () => {
