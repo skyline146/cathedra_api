@@ -16,7 +16,7 @@ export const init = () => {
   router.put('/refresh', authService.refresh)
 
   //carrier
-  router.get('/carrie/:id', async (req: express.Request, res: express.Response, next) => {
+  router.get('/carrier/:id', async (req: express.Request, res: express.Response, next) => {
     try {
       const { id } = req.params
       const order = await CarrierRepository.findOneBy({ id })
@@ -28,7 +28,7 @@ export const init = () => {
     }
   })
 
-  router.post('/carrie', async (req: express.Request, res: express.Response, next) => {
+  router.post('/carrier', async (req: express.Request, res: express.Response, next) => {
     try {
       const order: Partial<CarrierEntity> = req.body
       const newOrder = await CarrierRepository.save({ ...order })
