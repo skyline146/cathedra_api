@@ -2,7 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import { TokenRepository, UserRepository } from '../database/repositories'
 import bcrypt from 'bcrypt'
-import { UserEntity } from '../database/entities';
+import { UserModel } from '../database/models';
 import { tokenHelper } from '../helper/token';
 
 dotenv.config();
@@ -27,7 +27,7 @@ export class AuthController {
       console.log('1123131')
       const hashedPassword = bcrypt.hashSync(password, Number(process.env.PASS_SALT));
 
-      const user: Partial<UserEntity> = await UserRepository.save({
+      const user: Partial<UserModel> = await UserRepository.save({
         email,
         password: hashedPassword,
       })
@@ -55,7 +55,7 @@ export class AuthController {
       const { email, password } = req.body
 
       //check is user already exists
-      const user: UserEntity = await UserRepository.findOneBy({ email })
+      const user: UserModel = await UserRepository.findOneBy({ email })
 
       if (!user) {
         throw new Error('User doesnt exists')
@@ -87,7 +87,7 @@ export class AuthController {
     try {
       const { refreshToken } = req.cookies
 
-      const userData: Partial<UserEntity> = tokenHelper.validateRefreshToken(refreshToken)
+      const userData: Partial<UserModel> = tokenHelper.validateRefreshToken(refreshToken)
 
       const dbToken = await TokenRepository.findOneBy({ refreshToken })
 
@@ -95,7 +95,7 @@ export class AuthController {
         throw new Error('User not verified')
       }
 
-      const user: Partial<UserEntity> = await UserRepository.findOneBy({ id: userData.id })
+      const user: Partial<UserModel> = await UserRepository.findOneBy({ id: userData.id })
 
       if (!user) {
         throw new Error('User not verified')
@@ -116,7 +116,7 @@ export class AuthController {
     }
   }
 
-  async generateTokens(payload: Partial<UserEntity>) {
+  async generateTokens(payload: Partial<UserModel>) {
     console.log("token helper ", tokenHelper)
     const { accessToken, refreshToken } = tokenHelper.generateTokens({
       email: payload.email,

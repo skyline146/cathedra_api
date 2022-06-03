@@ -1,4 +1,4 @@
 import { AppDataSource } from "../data-source";
-import { CathedraEntity } from "../entities/Cathedra";
+import { CathedraModel } from "../models/Cathedra";
 
-export const CathedraRepository = AppDataSource.getRepository(CathedraEntity)
+export const CathedraRepository = AppDataSource.getRepository(CathedraModel)

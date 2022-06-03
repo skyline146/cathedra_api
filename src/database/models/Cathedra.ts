@@ -1,8 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 
 @Entity('cathedra')
-export class CathedraEntity {
+export class CathedraModel {
 
     @PrimaryGeneratedColumn("uuid")
     id: string

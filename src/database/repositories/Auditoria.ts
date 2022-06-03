@@ -1,5 +1,5 @@
 import { AppDataSource } from "../data-source";
-import { AuditoriaEntity } from "../entities/Auditoria";
+import { AuditoriaModel } from "../models/Auditoria";
 
-export const AuditoriaRepository = AppDataSource.getRepository(AuditoriaEntity)
+export const AuditoriaRepository = AppDataSource.getRepository(AuditoriaModel)
 

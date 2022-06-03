@@ -1,4 +1,4 @@
 import { AppDataSource } from "../data-source";
-import { CarrierEntity } from "../entities/Carrier";
+import { CarrierModel } from "../models/Carrier";
 
-export const CarrierRepository = AppDataSource.getRepository(CarrierEntity)
+export const CarrierRepository = AppDataSource.getRepository(CarrierModel)

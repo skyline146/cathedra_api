@@ -1,8 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany, JoinTable } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 
 @Entity('carrier')
-export class CarrierEntity {
+export class CarrierModel {
 
     @PrimaryGeneratedColumn("uuid")
     id: string

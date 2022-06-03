@@ -1,5 +1,5 @@
 import { AppDataSource } from "../data-source";
-import { UserEntity } from "../entities";
+import { UserModel } from "../models";
 
 
-export const UserRepository = AppDataSource.getRepository(UserEntity)
+export const UserRepository = AppDataSource.getRepository(UserModel)

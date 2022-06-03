@@ -1,5 +1,5 @@
 import { AppDataSource } from "../data-source";
-import { TokenEntity } from "../entities";
+import { TokenModel } from "../models";
 
-export const TokenRepository = AppDataSource.getRepository(TokenEntity)
+export const TokenRepository = AppDataSource.getRepository(TokenModel)
 
