@@ -1,6 +1,4 @@
-
-
-export default function (req, res, next) {
+export default function (req:any, res:any, next:any) {
   try {
     if (!res.data) {
       throw new Error("Something went wrong");

@@ -1,5 +1,4 @@
-import { jwtVerificationMiddleware } from "./jwtVerification.middleware";
-
+import { jwtVerificationMiddleware } from "./JWTVerification";
 
 export {
   jwtVerificationMiddleware

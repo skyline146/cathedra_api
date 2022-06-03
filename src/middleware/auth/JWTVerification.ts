@@ -2,7 +2,7 @@ import express from 'express'
 import { tokenHelper } from '../../helper/token';
 
 
-export const jwtVerificationMiddleware = (req: express.Request, res: express.Response, next) => {
+export const jwtVerificationMiddleware = (req: express.Request, res: express.Response, next:any) => {
   try {
     const authHeader = req.header("authorization");
 

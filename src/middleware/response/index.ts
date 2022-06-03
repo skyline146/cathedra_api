@@ -1,4 +1,4 @@
-import generalResponseMiddleware from "./generalResponse.middleware";
+import generalResponseMiddleware from "./GeneralResponse";
 
 export {
   generalResponseMiddleware
