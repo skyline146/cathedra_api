@@ -4,9 +4,10 @@ import { TokenRepository, UserRepository } from '../database/repositories'
 import bcrypt from 'bcrypt'
 import { UserEntity } from '../database/entities';
 import { tokenHelper } from '../helper/token';
+
 dotenv.config();
 
-export class AuthService {
+export class AuthController {
 
   constructor() {
 

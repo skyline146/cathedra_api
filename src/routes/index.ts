@@ -6,14 +6,14 @@ import { CathedraEntity } from '../database/entities/Cathedra'
 import { AuditoriaRepository } from '../database/repositories/Auditoria'
 import { CarrierRepository } from '../database/repositories/Carrier'
 import { CathedraRepository } from '../database/repositories/Catherda'
-import { authService } from "../service"
+import { authController } from "../controllers"
 
 export const init = () => {
   const router = Router()
 
-  router.post('/registration', authService.registration)
-  router.post('/login', authService.login)
-  router.put('/refresh', authService.refresh)
+  router.post('/registration', authController.registration)
+  router.post('/login', authController.login)
+  router.put('/refresh', authController.refresh)
 
   //carrier
   router.get('/carrier/:id', async (req: express.Request, res: express.Response, next) => {
